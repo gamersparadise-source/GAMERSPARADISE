@@ -1,186 +1,233 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Gamers Paradise</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gamers Paradise</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;800&display=swap" rel="stylesheet">
 
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(180deg, #000000, #0a0a1f);
-            color: white;
-            overflow-x: hidden;
-        }
+<style>
+body{
+margin:0;
+font-family:'Poppins',sans-serif;
+background:#0a0a1f;
+color:white;
+}
 
-        /* HERO */
-        header {
-            position: relative;
-            height: 100vh;
-            background: linear-gradient(#000000aa, #000000ee),
-                        url('https://images.unsplash.com/photo-1605902711622-cfb43c4437d1');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-        }
+/* HERO */
+header{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+background:linear-gradient(#000000aa,#000000ee),
+url('https://images.unsplash.com/photo-1605902711622-cfb43c4437d1');
+background-size:cover;
+}
 
-        h1 {
-            font-size: 70px;
-            color: #00ffff;
-            text-shadow: 0 0 25px #00ffff;
-            animation: glow 2s infinite alternate;
-        }
+h1{
+font-size:70px;
+color:#00ffff;
+text-shadow:0 0 25px #00ffff;
+animation:glow 2s infinite alternate;
+}
 
-        @keyframes glow {
-            from { text-shadow: 0 0 10px #00ffff; }
-            to { text-shadow: 0 0 30px #00ffff; }
-        }
+@keyframes glow{
+from{ text-shadow:0 0 10px #00ffff;}
+to{ text-shadow:0 0 30px #00ffff;}
+}
 
-        .tagline {
-            font-size: 25px;
-            color: #ff00ff;
-            margin-top: 10px;
-        }
+.tagline{
+font-size:25px;
+color:#ff00ff;
+}
 
-        .btn {
-            margin-top: 30px;
-            padding: 15px 35px;
-            background: #00ffff;
-            color: black;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: bold;
-            transition: 0.3s;
-        }
+.btn{
+margin-top:20px;
+padding:15px 35px;
+background:#00ffff;
+color:black;
+border-radius:30px;
+text-decoration:none;
+font-weight:bold;
+}
 
-        .btn:hover {
-            background: #ff00ff;
-            color: white;
-        }
+/* SECTIONS */
+section{
+padding:80px 20px;
+text-align:center;
+}
 
-        /* SECTION */
-        section {
-            padding: 80px 20px;
-            text-align: center;
-        }
+h2{
+color:#00ffff;
+font-size:40px;
+margin-bottom:30px;
+}
 
-        h2 {
-            font-size: 40px;
-            margin-bottom: 30px;
-            color: #00ffff;
-        }
+/* GRID */
+.grid{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+}
 
-        /* CARDS */
-        .grid {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
+.card{
+background:#111;
+margin:20px;
+padding:20px;
+border-radius:20px;
+width:300px;
+transition:.4s;
+box-shadow:0 0 20px #00ffff33;
+}
 
-        .card {
-            background: #111;
-            margin: 20px;
-            padding: 20px;
-            border-radius: 20px;
-            width: 300px;
-            transition: 0.4s;
-            box-shadow: 0 0 20px #00ffff33;
-        }
+.card:hover{
+transform:scale(1.05);
+box-shadow:0 0 30px #00ffff;
+}
 
-        .card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 30px #00ffff;
-        }
+.card img{
+width:100%;
+height:200px;
+border-radius:15px;
+object-fit:cover;
+}
 
-        .card img {
-            width: 100%;
-            border-radius: 15px;
-            height: 200px;
-            object-fit: cover;
-        }
+/* GALLERY */
+.gallery img{
+width:250px;
+margin:10px;
+border-radius:15px;
+cursor:pointer;
+transition:.3s;
+}
+.gallery img:hover{
+transform:scale(1.1);
+}
 
-        .price {
-            font-size: 35px;
-            color: #00ff99;
-        }
+/* PRICE */
+.price{
+font-size:35px;
+color:#00ff99;
+}
 
-        .phone {
-            color: #00aaff;
-            font-size: 20px;
-        }
+/* WHY US */
+.why{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+}
+.why div{
+margin:20px;
+padding:20px;
+background:#111;
+border-radius:15px;
+}
 
-        footer {
-            background: black;
-            padding: 30px;
-        }
+/* CONTACT */
+.phone{
+color:#00aaff;
+font-size:20px;
+}
 
-        /* WHATSAPP */
-        .whatsapp {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: #25D366;
-            padding: 15px 20px;
-            border-radius: 50px;
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-        }
-    </style>
+/* MAP */
+iframe{
+width:90%;
+height:300px;
+border-radius:15px;
+}
+
+/* WHATSAPP */
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+padding:15px;
+border-radius:50px;
+color:white;
+text-decoration:none;
+}
+
+</style>
 </head>
 
 <body>
 
 <header>
-    <h1>GAMERS PARADISE</h1>
-    <div class="tagline">LEVEL UP YOUR GAME</div>
-    <a href="#contact" class="btn">Book Now</a>
+<h1>GAMERS PARADISE</h1>
+<div class="tagline">LEVEL UP YOUR GAME</div>
+<a href="#contact" class="btn">Book Now</a>
 </header>
 
 <section>
-    <h2>🔥 Our Experiences</h2>
-    <div class="grid">
+<h2>🎮 Games & Experiences</h2>
+<div class="grid">
 
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1598550880863-6c3e2c2b4d2f">
-            <h3>🎳 Bowling</h3>
-            <p>Enjoy premium bowling lanes with friends</p>
-        </div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1598550880863-6c3e2c2b4d2f">
+<h3>🎳 Bowling</h3>
+<p>Premium bowling lanes</p>
+</div>
 
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1587202372775-a0a8d0a1b4b5">
-            <h3>🥽 VR Gaming</h3>
-            <p>Immersive next-gen virtual reality gaming</p>
-        </div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1587202372775-a0a8d0a1b4b5">
+<h3>🥽 VR Gaming</h3>
+<p>Next-level virtual reality</p>
+</div>
 
-    </div>
+<div class="card">
+<img src="https://images.unsplash.com/photo-1593642532400-2682810df593">
+<h3>🖥 Gaming Zone</h3>
+<p>High-end gaming setup</p>
+</div>
+
+</div>
 </section>
 
 <section>
-    <h2>💰 Pricing</h2>
+<h2>🖼️ Gallery</h2>
+<div class="gallery">
+<img src="https://images.unsplash.com/photo-1606813907291-d86efa9b94db">
+<img src="https://images.unsplash.com/photo-1587202372775-a0a8d0a1b4b5">
+<img src="https://images.unsplash.com/photo-1598550880863-6c3e2c2b4d2f">
+</div>
+</section>
 
-    <div class="card" style="margin:auto;">
-        <p>Starting From</p>
-        <div class="price">₹200</div>
-        <p>Per Session</p>
-    </div>
+<section>
+<h2>💰 Pricing</h2>
+<div class="card" style="margin:auto;">
+<p>Starting From</p>
+<div class="price">₹200</div>
+<p>Per Session</p>
+</div>
+</section>
 
+<section>
+<h2>⭐ Why Choose Us</h2>
+<div class="why">
+<div>⚡ High-end equipment</div>
+<div>❄️ Fully AC</div>
+<div>👥 Multiplayer fun</div>
+<div>🔥 Premium environment</div>
+</div>
 </section>
 
 <section id="contact">
-    <h2>📍 Visit Us</h2>
-    <p>Topsia, Metiabruz</p>
-    <p>📞 <a class="phone" href="tel:0000000000">0000000000</a></p>
+<h2>📍 Visit Us</h2>
+<p>Topsia, Metiabruz</p>
+<p>📞 <a class="phone" href="tel:0000000000">0000000000</a></p>
+
+<br>
+
+<iframe src="https://maps.google.com/maps?q=metiabruz&t=&z=13&ie=UTF8&iwloc=&output=embed"></iframe>
+
 </section>
 
 <footer>
-    <p>© 2026 Gamers Paradise</p>
+<p>© 2026 Gamers Paradise</p>
 </footer>
 
 <a class="whatsapp" href="https://wa.me/910000000000">WhatsApp</a>
