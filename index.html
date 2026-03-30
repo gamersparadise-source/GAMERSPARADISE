@@ -10,15 +10,16 @@
 body{
 margin:0;
 font-family:'Poppins',sans-serif;
-background:#0a0a1f;
 color:white;
 overflow-x:hidden;
 
-/* 🔥 TEXTURE BACKGROUND */
+/* 🔥 DENSE GAMING TEXTURE BACKGROUND */
+background-color:#0a0a1f;
 background-image:
-radial-gradient(circle at 10% 20%, rgba(255,255,255,0.05) 2px, transparent 2px),
-radial-gradient(circle at 80% 60%, rgba(0,255,255,0.05) 2px, transparent 2px);
-background-size:80px 80px;
+url("https://www.transparenttextures.com/patterns/cubes.png"),
+radial-gradient(circle, rgba(0,255,255,0.08) 2px, transparent 2px),
+radial-gradient(circle, rgba(255,0,255,0.08) 2px, transparent 2px);
+background-size:150px 150px, 60px 60px, 60px 60px;
 }
 
 /* MENU */
@@ -36,7 +37,7 @@ display:none;
 position:fixed;
 top:70px;
 right:20px;
-background:rgba(0,0,0,0.8);
+background:rgba(0,0,0,0.85);
 padding:20px;
 border-radius:15px;
 backdrop-filter:blur(10px);
@@ -65,11 +66,11 @@ background-size:cover;
 h1{
 font-size:70px;
 color:#00ffff;
-text-shadow:0 0 30px #00ffff;
+text-shadow:0 0 40px #00ffff;
 }
 
 .tagline{
-font-size:22px;
+font-size:24px;
 color:#ff00ff;
 margin-top:10px;
 }
@@ -83,36 +84,25 @@ color:black;
 border-radius:30px;
 text-decoration:none;
 font-weight:bold;
-box-shadow:0 0 15px #00ffff;
+box-shadow:0 0 20px #00ffff;
 }
 
 /* SECTION */
 section{
-padding:90px 20px;
+padding:100px 20px;
 text-align:center;
 }
 
 h2{
 color:#00ffff;
-font-size:42px;
-text-shadow:0 0 10px #00ffff;
+font-size:45px;
+text-shadow:0 0 15px #00ffff;
 }
 
-/* SLIDE */
-.left{
-transform:translateX(-120px);
-opacity:0;
-transition:1s;
-}
-.right{
-transform:translateX(120px);
-opacity:0;
-transition:1s;
-}
-.show{
-transform:translateX(0);
-opacity:1;
-}
+/* ANIMATION */
+.left{transform:translateX(-120px);opacity:0;transition:1s;}
+.right{transform:translateX(120px);opacity:0;transition:1s;}
+.show{transform:translateX(0);opacity:1;}
 
 /* GRID */
 .grid{
@@ -121,99 +111,94 @@ flex-wrap:wrap;
 justify-content:center;
 }
 
-/* 🔥 BIGGER PREMIUM CARDS */
+/* 🔥 BIGGER + COLORED GLOW CARDS */
 .card{
-background:rgba(255,255,255,0.05);
-margin:25px;
+margin:30px;
 padding:25px;
 border-radius:25px;
-width:320px;
+width:360px;
+background:rgba(255,255,255,0.05);
 backdrop-filter:blur(10px);
 transition:.4s;
-box-shadow:0 0 25px #00ffff33;
-border:1px solid rgba(255,255,255,0.1);
+position:relative;
 }
 
-/* GLOW EFFECT */
+/* MULTI COLOR GLOW */
+.card::before{
+content:'';
+position:absolute;
+top:-5px;left:-5px;right:-5px;bottom:-5px;
+border-radius:25px;
+z-index:-1;
+filter:blur(20px);
+opacity:0.8;
+}
+
+/* DIFFERENT COLORS */
+.card:nth-child(1)::before{background:linear-gradient(45deg,#00ffff,#00ff99);}
+.card:nth-child(2)::before{background:linear-gradient(45deg,#ff00ff,#ff6600);}
+.card:nth-child(3)::before{background:linear-gradient(45deg,#00ffcc,#0066ff);}
+.card:nth-child(4)::before{background:linear-gradient(45deg,#ffcc00,#ff0066);}
+.card:nth-child(5)::before{background:linear-gradient(45deg,#00ffff,#ff00ff);}
+.card:nth-child(6)::before{background:linear-gradient(45deg,#00ff99,#ff6600);}
+.card:nth-child(7)::before{background:linear-gradient(45deg,#ff0066,#6600ff);}
+.card:nth-child(8)::before{background:linear-gradient(45deg,#00ccff,#00ffcc);}
+.card:nth-child(9)::before{background:linear-gradient(45deg,#ff00ff,#00ffff);}
+
+/* HOVER STRONG GLOW */
 .card:hover{
-transform:scale(1.08);
-box-shadow:0 0 40px #00ffff, 0 0 80px #00ffff44;
+transform:scale(1.1);
 }
 
-/* IMAGES BIGGER */
+/* IMAGE BIGGER */
 .card img{
 width:100%;
-height:220px;
+height:240px;
 border-radius:20px;
 object-fit:cover;
 }
 
-/* GALLERY BIGGER */
+/* GALLERY */
 .gallery img{
-width:260px;
-margin:12px;
+width:300px;
+margin:15px;
 border-radius:20px;
 transition:.3s;
-box-shadow:0 0 15px #00ffff33;
 }
 .gallery img:hover{
 transform:scale(1.1);
-box-shadow:0 0 30px #00ffff;
 }
 
 /* CONTACT */
-.phone{
-color:#00aaff;
-font-size:20px;
-}
+.phone{color:#00aaff;font-size:20px;}
 
 /* MAP */
 iframe{
 width:90%;
-height:260px;
+height:280px;
 border-radius:15px;
 margin-top:10px;
 }
 
 /* FLOAT BUTTONS */
 .whatsapp{
-position:fixed;
-bottom:20px;
-right:20px;
-background:#25D366;
-padding:15px;
-border-radius:50px;
-color:white;
-text-decoration:none;
+position:fixed;bottom:20px;right:20px;
+background:#25D366;padding:15px;border-radius:50px;color:white;text-decoration:none;
 }
-
 .instagram{
-position:fixed;
-bottom:80px;
-right:20px;
+position:fixed;bottom:80px;right:20px;
 background:linear-gradient(45deg,#f09433,#dc2743,#bc1888);
-padding:15px;
-border-radius:50px;
-color:white;
-text-decoration:none;
+padding:15px;border-radius:50px;color:white;text-decoration:none;
 }
-
 .call{
-position:fixed;
-bottom:140px;
-right:20px;
-background:#007bff;
-padding:15px;
-border-radius:50px;
-color:white;
-text-decoration:none;
+position:fixed;bottom:140px;right:20px;
+background:#007bff;padding:15px;border-radius:50px;color:white;text-decoration:none;
 }
 </style>
 </head>
 
 <body>
 
-<!-- MENU -->
 <div class="menu-icon" onclick="toggleMenu()">☰</div>
 <div id="menu" class="menu">
 <a href="#">Home</a>
@@ -223,19 +208,16 @@ text-decoration:none;
 <a href="#branches">Branches</a>
 </div>
 
-<!-- HERO -->
 <header>
 <h1>GAMERS PARADISE</h1>
 <div class="tagline">Your Ultimate Playtime Destination</div>
 <a href="#branches" class="btn">Visit Us</a>
 </header>
 
-<!-- INTRO -->
 <section>
 <img src="intro.png" class="left" width="85%">
 </section>
 
-<!-- GAMES -->
 <section id="games">
 <h2>🎮 Our Games</h2>
 <div class="grid">
@@ -253,7 +235,6 @@ text-decoration:none;
 </div>
 </section>
 
-<!-- GALLERY -->
 <section id="gallery">
 <h2>🖼️ Gallery</h2>
 <div class="gallery">
@@ -264,15 +245,13 @@ text-decoration:none;
 </div>
 </section>
 
-<!-- REVIEWS -->
 <section id="reviews">
 <h2>⭐ Reviews</h2>
-<img src="review.png" class="left" width="260">
-<img src="review 2.png" class="right" width="260">
-<img src="review 3.png" class="left" width="260">
+<img src="review.png" class="left" width="280">
+<img src="review 2.png" class="right" width="280">
+<img src="review 3.png" class="left" width="280">
 </section>
 
-<!-- BRANCHES -->
 <section id="branches">
 <h2>📍 Our Branches</h2>
 
@@ -289,7 +268,6 @@ text-decoration:none;
 
 </section>
 
-<!-- FLOAT BUTTONS -->
 <a class="instagram" href="https://www.instagram.com/gamersparadisekol?igsh=dGMwd2s0dWlpb3J1">Instagram</a>
 <a class="whatsapp" href="https://wa.me/910000000000">WhatsApp</a>
 <a class="call" href="tel:0000000000">Call</a>
@@ -303,9 +281,8 @@ menu.style.display=(menu.style.display==="block")?"none":"block";
 let elements=document.querySelectorAll('.left, .right');
 window.addEventListener('scroll',()=>{
 elements.forEach(el=>{
-let position=el.getBoundingClientRect().top;
-let screen=window.innerHeight;
-if(position<screen-100){
+let pos=el.getBoundingClientRect().top;
+if(pos<window.innerHeight-100){
 el.classList.add('show');
 }
 });
