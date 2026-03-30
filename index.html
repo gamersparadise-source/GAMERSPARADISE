@@ -2,24 +2,34 @@
 <html>
 <head>
 <title>Gamers Paradise</title>
+
+<!-- ✅ FIX ZOOM ISSUE -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;800&display=swap" rel="stylesheet">
 
 <style>
+
+/* ✅ GLOBAL FIX (VERY IMPORTANT) */
+*{
+box-sizing:border-box;
+max-width:100%;
+}
+
 body{
 margin:0;
 font-family:'Poppins',sans-serif;
 color:white;
 overflow-x:hidden;
 
-/* 🔥 DENSE GAMING TEXTURE BACKGROUND */
+/* 🔥 DENSE PREMIUM TEXTURE */
 background-color:#0a0a1f;
 background-image:
-url("https://www.transparenttextures.com/patterns/cubes.png"),
-radial-gradient(circle, rgba(0,255,255,0.08) 2px, transparent 2px),
-radial-gradient(circle, rgba(255,0,255,0.08) 2px, transparent 2px);
-background-size:150px 150px, 60px 60px, 60px 60px;
+url("https://www.transparenttextures.com/patterns/asfalt-light.png"),
+radial-gradient(circle at 20% 20%, rgba(0,255,255,0.06) 2px, transparent 2px),
+radial-gradient(circle at 80% 60%, rgba(255,0,255,0.06) 2px, transparent 2px),
+radial-gradient(circle at 50% 50%, rgba(255,255,255,0.03) 1px, transparent 1px);
+background-size:100px 100px, 50px 50px, 50px 50px, 30px 30px;
 }
 
 /* MENU */
@@ -111,7 +121,7 @@ flex-wrap:wrap;
 justify-content:center;
 }
 
-/* 🔥 BIGGER + COLORED GLOW CARDS */
+/* CARDS */
 .card{
 margin:30px;
 padding:25px;
@@ -123,7 +133,7 @@ transition:.4s;
 position:relative;
 }
 
-/* MULTI COLOR GLOW */
+/* GLOW */
 .card::before{
 content:'';
 position:absolute;
@@ -132,25 +142,15 @@ border-radius:25px;
 z-index:-1;
 filter:blur(20px);
 opacity:0.8;
+background:linear-gradient(45deg,#00ffff,#ff00ff);
 }
 
-/* DIFFERENT COLORS */
-.card:nth-child(1)::before{background:linear-gradient(45deg,#00ffff,#00ff99);}
-.card:nth-child(2)::before{background:linear-gradient(45deg,#ff00ff,#ff6600);}
-.card:nth-child(3)::before{background:linear-gradient(45deg,#00ffcc,#0066ff);}
-.card:nth-child(4)::before{background:linear-gradient(45deg,#ffcc00,#ff0066);}
-.card:nth-child(5)::before{background:linear-gradient(45deg,#00ffff,#ff00ff);}
-.card:nth-child(6)::before{background:linear-gradient(45deg,#00ff99,#ff6600);}
-.card:nth-child(7)::before{background:linear-gradient(45deg,#ff0066,#6600ff);}
-.card:nth-child(8)::before{background:linear-gradient(45deg,#00ccff,#00ffcc);}
-.card:nth-child(9)::before{background:linear-gradient(45deg,#ff00ff,#00ffff);}
-
-/* HOVER STRONG GLOW */
+/* HOVER */
 .card:hover{
 transform:scale(1.1);
 }
 
-/* IMAGE BIGGER */
+/* IMAGE */
 .card img{
 width:100%;
 height:240px;
@@ -180,20 +180,23 @@ border-radius:15px;
 margin-top:10px;
 }
 
-/* FLOAT BUTTONS */
-.whatsapp{
-position:fixed;bottom:20px;right:20px;
-background:#25D366;padding:15px;border-radius:50px;color:white;text-decoration:none;
-}
-.instagram{
-position:fixed;bottom:80px;right:20px;
-background:linear-gradient(45deg,#f09433,#dc2743,#bc1888);
-padding:15px;border-radius:50px;color:white;text-decoration:none;
-}
+/* ✅ FIX FLOAT BUTTONS */
+.whatsapp,
+.instagram,
 .call{
-position:fixed;bottom:140px;right:20px;
-background:#007bff;padding:15px;border-radius:50px;color:white;text-decoration:none;
+position:fixed;
+right:10px;
+padding:12px 14px;
+border-radius:50px;
+color:white;
+text-decoration:none;
+z-index:9999;
 }
+
+.whatsapp{bottom:15px;background:#25D366;}
+.instagram{bottom:75px;background:linear-gradient(45deg,#f09433,#dc2743,#bc1888);}
+.call{bottom:135px;background:#007bff;}
+
 </style>
 </head>
 
