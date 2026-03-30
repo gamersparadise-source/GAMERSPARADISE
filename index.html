@@ -35,27 +35,29 @@ radial-gradient(circle, rgba(255,0,255,0.08) 3px, transparent 3px);
 background-size:180px 180px, 90px 90px, 90px 90px;
 }
 
-/* MENU ICON */
+/* 🔥 MENU ICON (ALWAYS ON TOP) */
 .menu-icon{
 position:fixed;
-top:20px;
+top:15px;
 right:20px;
-font-size:30px;
+font-size:32px;
 cursor:pointer;
-z-index:1000;
+z-index:99999; /* always above */
 }
 
-/* MENU BOX */
+/* 🔥 MENU BOX (FIXED & ON TOP) */
 .menu{
 display:none;
 position:fixed;
-top:70px;
+top:60px;
 right:20px;
-background:rgba(0,0,0,0.9);
+background:rgba(0,0,0,0.95);
 padding:20px;
 border-radius:15px;
 backdrop-filter:blur(10px);
 text-align:left;
+z-index:99999; /* stays above everything */
+box-shadow:0 0 20px rgba(0,0,0,0.6);
 }
 
 .menu a{
@@ -250,6 +252,7 @@ font-size:20px;
 <a href="#games">Games</a>
 <a href="#gallery">Gallery</a>
 <a href="#branches">Branches</a>
+<a href="#branches">Contact Us</a>
 </div>
 
 <header>
