@@ -3,33 +3,32 @@
 <head>
 <title>Gamers Paradise</title>
 
-<!-- ✅ FIX ZOOM ISSUE -->
+<!-- ✅ FIX VIEWPORT -->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;800&display=swap" rel="stylesheet">
 
 <style>
 
-/* ✅ GLOBAL FIX (VERY IMPORTANT) */
+/* ✅ GLOBAL FIX */
 *{
 box-sizing:border-box;
-max-width:100%;
+margin:0;
+padding:0;
 }
 
 body{
-margin:0;
 font-family:'Poppins',sans-serif;
 color:white;
 overflow-x:hidden;
 
-/* 🔥 DENSE PREMIUM TEXTURE */
+/* 🔥 BIGGER GAMING TEXTURE */
 background-color:#0a0a1f;
 background-image:
 url("https://www.transparenttextures.com/patterns/asfalt-light.png"),
-radial-gradient(circle at 20% 20%, rgba(0,255,255,0.06) 2px, transparent 2px),
-radial-gradient(circle at 80% 60%, rgba(255,0,255,0.06) 2px, transparent 2px),
-radial-gradient(circle at 50% 50%, rgba(255,255,255,0.03) 1px, transparent 1px);
-background-size:100px 100px, 50px 50px, 50px 50px, 30px 30px;
+radial-gradient(circle, rgba(0,255,255,0.08) 3px, transparent 3px),
+radial-gradient(circle, rgba(255,0,255,0.08) 3px, transparent 3px);
+background-size:180px 180px, 90px 90px, 90px 90px;
 }
 
 /* MENU */
@@ -42,25 +41,7 @@ cursor:pointer;
 z-index:1000;
 }
 
-.menu{
-display:none;
-position:fixed;
-top:70px;
-right:20px;
-background:rgba(0,0,0,0.85);
-padding:20px;
-border-radius:15px;
-backdrop-filter:blur(10px);
-}
-.menu a{
-display:block;
-color:white;
-padding:10px;
-text-decoration:none;
-}
-.menu a:hover{color:#00ffff}
-
-/* HERO */
+/* HERO FIXED CENTER */
 header{
 height:100vh;
 display:flex;
@@ -68,11 +49,16 @@ flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
+width:100%;
+margin:0 auto;
+
 background:linear-gradient(#000000aa,#000000ee),
 url('hero section background.png');
 background-size:cover;
+background-position:center;
 }
 
+/* TEXT */
 h1{
 font-size:70px;
 color:#00ffff;
@@ -103,17 +89,6 @@ padding:100px 20px;
 text-align:center;
 }
 
-h2{
-color:#00ffff;
-font-size:45px;
-text-shadow:0 0 15px #00ffff;
-}
-
-/* ANIMATION */
-.left{transform:translateX(-120px);opacity:0;transition:1s;}
-.right{transform:translateX(120px);opacity:0;transition:1s;}
-.show{transform:translateX(0);opacity:1;}
-
 /* GRID */
 .grid{
 display:flex;
@@ -121,7 +96,7 @@ flex-wrap:wrap;
 justify-content:center;
 }
 
-/* CARDS */
+/* CARD */
 .card{
 margin:30px;
 padding:25px;
@@ -129,7 +104,6 @@ border-radius:25px;
 width:360px;
 background:rgba(255,255,255,0.05);
 backdrop-filter:blur(10px);
-transition:.4s;
 position:relative;
 }
 
@@ -139,15 +113,9 @@ content:'';
 position:absolute;
 top:-5px;left:-5px;right:-5px;bottom:-5px;
 border-radius:25px;
-z-index:-1;
 filter:blur(20px);
-opacity:0.8;
+z-index:-1;
 background:linear-gradient(45deg,#00ffff,#ff00ff);
-}
-
-/* HOVER */
-.card:hover{
-transform:scale(1.1);
 }
 
 /* IMAGE */
@@ -163,14 +131,7 @@ object-fit:cover;
 width:300px;
 margin:15px;
 border-radius:20px;
-transition:.3s;
 }
-.gallery img:hover{
-transform:scale(1.1);
-}
-
-/* CONTACT */
-.phone{color:#00aaff;font-size:20px;}
 
 /* MAP */
 iframe{
@@ -180,7 +141,7 @@ border-radius:15px;
 margin-top:10px;
 }
 
-/* ✅ FIX FLOAT BUTTONS */
+/* ✅ FLOAT BUTTON FIX */
 .whatsapp,
 .instagram,
 .call{
@@ -202,38 +163,29 @@ z-index:9999;
 
 <body>
 
-<div class="menu-icon" onclick="toggleMenu()">☰</div>
-<div id="menu" class="menu">
-<a href="#">Home</a>
-<a href="#games">Games</a>
-<a href="#gallery">Gallery</a>
-<a href="#reviews">Reviews</a>
-<a href="#branches">Branches</a>
-</div>
-
 <header>
 <h1>GAMERS PARADISE</h1>
 <div class="tagline">Your Ultimate Playtime Destination</div>
-<a href="#branches" class="btn">Visit Us</a>
+<a href="#games" class="btn">Explore</a>
 </header>
 
 <section>
-<img src="intro.png" class="left" width="85%">
+<img src="intro.png" width="85%">
 </section>
 
 <section id="games">
 <h2>🎮 Our Games</h2>
 <div class="grid">
 
-<div class="card left"><img src="bowling zone.png"><h3>Bowling</h3></div>
-<div class="card right"><img src="air hockey.png"><h3>Air Hockey</h3></div>
-<div class="card left"><img src="basketball.png"><h3>Basketball</h3></div>
-<div class="card right"><img src="bike racing.png"><h3>Bike Racing</h3></div>
-<div class="card left"><img src="car racing.png"><h3>Car Racing</h3></div>
-<div class="card right"><img src="lucky pong.png"><h3>Lucky Pong</h3></div>
-<div class="card left"><img src="vr ak47.png"><h3>VR Shooting</h3></div>
-<div class="card right"><img src="vr paraglider.png"><h3>VR Paragliding</h3></div>
-<div class="card left"><img src="vr space ride.png"><h3>VR Space Ride</h3></div>
+<div class="card"><img src="bowling zone.png"><h3>Bowling</h3></div>
+<div class="card"><img src="air hockey.png"><h3>Air Hockey</h3></div>
+<div class="card"><img src="basketball.png"><h3>Basketball</h3></div>
+<div class="card"><img src="bike racing.png"><h3>Bike Racing</h3></div>
+<div class="card"><img src="car racing.png"><h3>Car Racing</h3></div>
+<div class="card"><img src="lucky pong.png"><h3>Lucky Pong</h3></div>
+<div class="card"><img src="vr ak47.png"><h3>VR Shooting</h3></div>
+<div class="card"><img src="vr paraglider.png"><h3>VR Paragliding</h3></div>
+<div class="card"><img src="vr space ride.png"><h3>VR Space Ride</h3></div>
 
 </div>
 </section>
@@ -248,13 +200,6 @@ z-index:9999;
 </div>
 </section>
 
-<section id="reviews">
-<h2>⭐ Reviews</h2>
-<img src="review.png" class="left" width="280">
-<img src="review 2.png" class="right" width="280">
-<img src="review 3.png" class="left" width="280">
-</section>
-
 <section id="branches">
 <h2>📍 Our Branches</h2>
 
@@ -267,30 +212,13 @@ z-index:9999;
 <h3>Beck Bagan</h3>
 <iframe src="https://maps.google.com/maps?q=i8YhHRoG4k2GTZ6m8&output=embed"></iframe>
 
-<p>📞 <a class="phone" href="tel:0000000000">0000000000</a></p>
+<p>📞 <a href="tel:0000000000" style="color:#00aaff;">0000000000</a></p>
 
 </section>
 
 <a class="instagram" href="https://www.instagram.com/gamersparadisekol?igsh=dGMwd2s0dWlpb3J1">Instagram</a>
 <a class="whatsapp" href="https://wa.me/910000000000">WhatsApp</a>
 <a class="call" href="tel:0000000000">Call</a>
-
-<script>
-function toggleMenu(){
-var menu=document.getElementById("menu");
-menu.style.display=(menu.style.display==="block")?"none":"block";
-}
-
-let elements=document.querySelectorAll('.left, .right');
-window.addEventListener('scroll',()=>{
-elements.forEach(el=>{
-let pos=el.getBoundingClientRect().top;
-if(pos<window.innerHeight-100){
-el.classList.add('show');
-}
-});
-});
-</script>
 
 </body>
 </html>
