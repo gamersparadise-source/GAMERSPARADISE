@@ -30,7 +30,7 @@ radial-gradient(circle, rgba(255,0,255,0.08) 3px, transparent 3px);
 background-size:180px 180px, 90px 90px, 90px 90px;
 }
 
-/* HERO FIXED CENTER */
+/* HERO */
 header{
 height:100vh;
 display:flex;
@@ -43,10 +43,9 @@ width:100%;
 background:linear-gradient(#000000aa,#000000ee),
 url('hero section background.png');
 background-size:cover;
-background-position:center center;
+background-position:center;
 }
 
-/* TEXT */
 h1{
 font-size:70px;
 color:#00ffff;
@@ -59,7 +58,6 @@ color:#ff00ff;
 margin-top:10px;
 }
 
-/* BUTTON */
 .btn{
 margin-top:20px;
 padding:15px 30px;
@@ -77,13 +75,17 @@ padding:100px 20px;
 text-align:center;
 }
 
-/* INTRO FULL WIDTH */
+h2{
+color:#00ffff;
+font-size:45px;
+}
+
+/* INTRO FULL */
 .intro{
 width:100%;
 height:100vh;
 overflow:hidden;
 }
-
 .intro img{
 width:100%;
 height:100%;
@@ -124,7 +126,6 @@ backdrop-filter:blur(10px);
 position:relative;
 transition:0.4s;
 }
-
 .card:hover{
 transform:scale(1.08);
 }
@@ -167,23 +168,34 @@ border-radius:15px;
 margin-top:10px;
 }
 
-/* 🔥 BUTTON FIX (ALWAYS VISIBLE) */
-.whatsapp,
-.instagram,
-.call{
-position:fixed;
-right:25px;
-padding:14px 18px;
-border-radius:50px;
-color:white;
-text-decoration:none;
-z-index:9999;
-box-shadow:0 0 15px rgba(0,0,0,0.6);
+/* 🔥 CONTACT BUTTONS */
+.contact-buttons{
+margin-top:30px;
+display:flex;
+justify-content:center;
+gap:20px;
+flex-wrap:wrap;
 }
 
-.whatsapp{bottom:20px;background:#25D366;}
-.instagram{bottom:90px;background:linear-gradient(45deg,#f09433,#dc2743,#bc1888);}
-.call{bottom:160px;background:#007bff;}
+.contact-buttons a{
+padding:12px 20px;
+border-radius:30px;
+text-decoration:none;
+color:white;
+font-weight:bold;
+box-shadow:0 0 10px rgba(0,0,0,0.5);
+}
+
+.call-btn{background:#007bff;}
+.whatsapp-btn{background:#25D366;}
+.insta-btn{
+background:linear-gradient(45deg,#f09433,#dc2743,#bc1888);
+}
+
+.phone{
+color:#00aaff;
+font-size:20px;
+}
 
 </style>
 </head>
@@ -196,7 +208,6 @@ box-shadow:0 0 15px rgba(0,0,0,0.6);
 <a href="#games" class="btn">Explore</a>
 </header>
 
-<!-- FULL SCREEN INTRO -->
 <section class="intro">
 <img src="intro.png">
 </section>
@@ -240,13 +251,16 @@ box-shadow:0 0 15px rgba(0,0,0,0.6);
 <h3>Gamers Paradise Beck Bagan</h3>
 <iframe src="https://www.google.com/maps?q=Gamers+Paradise+Beck+Bagan+Kolkata&output=embed"></iframe>
 
-<p>📞 <a href="tel:0000000000" style="color:#00aaff;">0000000000</a></p>
+<p>📞 <a class="phone" href="tel:0000000000">0000000000</a></p>
+
+<!-- 🔥 NEW CONTACT BUTTONS -->
+<div class="contact-buttons">
+<a class="call-btn" href="tel:0000000000">📞 Call</a>
+<a class="whatsapp-btn" href="https://wa.me/910000000000">💬 WhatsApp</a>
+<a class="insta-btn" href="https://www.instagram.com/gamersparadisekol?igsh=dGMwd2s0dWlpb3J1">📸 Instagram</a>
+</div>
 
 </section>
-
-<a class="instagram" href="https://www.instagram.com/gamersparadisekol?igsh=dGMwd2s0dWlpb3J1">Instagram</a>
-<a class="whatsapp" href="https://wa.me/910000000000">WhatsApp</a>
-<a class="call" href="tel:0000000000">Call</a>
 
 <script>
 let elements=document.querySelectorAll('.left, .right');
